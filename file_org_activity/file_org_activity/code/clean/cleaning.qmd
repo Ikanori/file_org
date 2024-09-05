@@ -33,3 +33,19 @@ Practicing your keyboard shortcuts. Try out the following as you work on this ex
 - Run a code chunk
 - Navigating around words and lines (selecting and deleting them)
 - Run selected lines (not a whole code chunk)
+
+```{r Data message=FALSE,warning=FALSE}
+library(tidyverse)
+
+weather <- read_csv("../../data/raw/weather.csv")
+```
+```{r}
+weather %>%
+  mutate(
+    PrecipYr = na_if(PrecipYr, 99999),
+    date= as.character.Date(date)
+    )
+
+```
+
+
